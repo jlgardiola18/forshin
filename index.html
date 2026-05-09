@@ -2,73 +2,97 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Happy Mother's Day ❤️</title>
 
-    <!-- Google Fonts -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
 
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
+    <!-- Loading Screen -->
+    <div class="loader" id="loader">
+
+        <div class="loader-heart">❤️</div>
+
+        <p>Loading Love...</p>
+
+    </div>
+
     <!-- Floating Hearts -->
     <div class="floating-hearts" id="hearts"></div>
 
-    <!-- Main Section -->
-    <section class="hero">
+    <!-- Main Website -->
+    <main class="main-content" id="mainContent">
 
-        <div class="card">
+        <section class="hero">
 
-            <h1 class="title">
-                Happy Mother's Day ❤️
-            </h1>
+            <div class="card">
 
-            <p class="subtitle">
-                To My Amazing Partner
-            </p>
+                <!-- Glowing Background -->
+                <div class="glow glow1"></div>
+                <div class="glow glow2"></div>
 
-            <!-- Photo -->
-            <div class="photo-frame">
-                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=800&auto=format&fit=crop" alt="photo">
+                <!-- Title -->
+                <h1 class="title">
+                    Happy Mother's Day ❤️
+                </h1>
+
+                <p class="subtitle">
+                    To My Amazing Partner
+                </p>
+
+                <!-- Photo -->
+                <div class="photo-frame">
+
+                    <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=800&auto=format&fit=crop" alt="photo">
+
+                </div>
+
+                <!-- Message -->
+                <p class="message">
+
+                    Thank you for being an amazing mother, partner, and the heart of our family.
+
+                    <br><br> Your love, strength, care, and kindness mean everything to me.
+
+                    <br><br> We are so lucky to have you ❤️
+
+                </p>
+
+                <!-- Buttons -->
+                <div class="button-group">
+
+                    <button class="primary-btn" onclick="openEnvelope()">
+            Open Message 💌
+          </button>
+
+                </div>
+
             </div>
 
-            <!-- Message -->
-            <p class="message">
-                Thank you for being an amazing mother, partner, and the heart of our family.
-                <br><br> Your love, strength, care, and kindness mean everything to me.
-                <br><br> We are so lucky to have you ❤️
-            </p>
+        </section>
 
-            <!-- Button -->
-            <div class="button-group">
+    </main>
 
-                <button onclick="openEnvelope()">
-          Open Message 💌
-        </button>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- Overlay -->
+    <!-- Envelope Popup -->
     <div class="overlay" id="overlay">
 
         <div class="popup-envelope-container">
 
-            <!-- Envelope -->
             <div class="envelope" id="envelope">
 
-                <!-- Letter -->
                 <div class="letter">
 
                     <h2>My Love ❤️</h2>
@@ -88,7 +112,6 @@
 
             </div>
 
-            <!-- Close Button -->
             <button class="close-btn" onclick="closeEnvelope()">
         Close ✖
       </button>

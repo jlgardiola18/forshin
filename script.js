@@ -1,7 +1,25 @@
+/* =========================
+   LOADER
+========================= */
+
+window.addEventListener("load", () => {
+
+    const loader =
+        document.getElementById("loader");
+
+    setTimeout(() => {
+        loader.classList.add("hide");
+    }, 1800);
+
+});
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
 const heartsContainer =
     document.getElementById("hearts");
 
-/* Floating Hearts */
 function createHeart() {
 
     const heart =
@@ -18,10 +36,13 @@ function createHeart() {
         Math.random() * 100 + "vw";
 
     heart.style.fontSize =
-        Math.random() * 20 + 15 + "px";
+        Math.random() * 25 + 15 + "px";
 
     heart.style.animationDuration =
         Math.random() * 4 + 4 + "s";
+
+    heart.style.opacity =
+        Math.random();
 
     heartsContainer.appendChild(heart);
 
@@ -31,9 +52,12 @@ function createHeart() {
 }
 
 /* Generate Hearts */
-setInterval(createHeart, 250);
+setInterval(createHeart, 220);
 
-/* Open Envelope */
+/* =========================
+   ENVELOPE
+========================= */
+
 function openEnvelope() {
 
     const overlay =
@@ -49,7 +73,6 @@ function openEnvelope() {
     }, 200);
 }
 
-/* Close Envelope */
 function closeEnvelope() {
 
     const overlay =
@@ -65,8 +88,11 @@ function closeEnvelope() {
     }, 700);
 }
 
-/* Heart Burst Click Effect */
-document.addEventListener("click", function(e) {
+/* =========================
+   HEART BURST
+========================= */
+
+document.addEventListener("click", (e) => {
 
     for (let i = 0; i < 8; i++) {
 
@@ -97,4 +123,5 @@ document.addEventListener("click", function(e) {
             burst.remove();
         }, 3000);
     }
+
 });

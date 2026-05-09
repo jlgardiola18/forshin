@@ -1,0 +1,384 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    background: linear-gradient(135deg, #ffd6e7, #fff0f5, #ffe6d6);
+    min-height: 100vh;
+    color: #5a2d3b;
+}
+
+
+/* PAGE LOAD ANIMATION */
+
+body {
+    animation: pageFade 1.2s ease;
+}
+
+
+/* Fade + Zoom Effect */
+
+@keyframes pageFade {
+    0% {
+        opacity: 0;
+        transform: scale(1.03);
+        filter: blur(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0);
+    }
+}
+
+
+/* Card Entrance Animation */
+
+.card {
+    animation: cardEntrance 1.4s ease;
+}
+
+@keyframes cardEntrance {
+    0% {
+        opacity: 0;
+        transform: translateY(40px) scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* Title Animation */
+
+.title {
+    animation: titlePop 1.8s ease;
+}
+
+@keyframes titlePop {
+    0% {
+        opacity: 0;
+        letter-spacing: 10px;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        letter-spacing: 0;
+        transform: translateY(0);
+    }
+}
+
+
+/* Photo Float */
+
+.photo-frame {
+    animation: photoFloat 4s ease-in-out infinite;
+}
+
+@keyframes photoFloat {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+/* Button Fade */
+
+.button-group {
+    animation: buttonFade 2s ease;
+}
+
+@keyframes buttonFade {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Floating Hearts */
+
+.floating-hearts {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.heart {
+    position: absolute;
+    bottom: -50px;
+    color: rgba(255, 105, 180, 0.7);
+    animation: floatUp linear forwards;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-120vh) scale(1.5);
+        opacity: 0;
+    }
+}
+
+
+/* Hero */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+
+/* Card */
+
+.card {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    padding: 40px;
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Title */
+
+.title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 4rem;
+    color: #ff4f93;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+
+/* Photo */
+
+.photo-frame {
+    width: 220px;
+    height: 220px;
+    margin: 0 auto 25px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 8px solid #ffb3d1;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* Message */
+
+.message {
+    line-height: 1.8;
+    font-size: 1rem;
+    margin-bottom: 30px;
+}
+
+
+/* Button */
+
+.button-group {
+    margin-top: 20px;
+}
+
+button {
+    padding: 14px 24px;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    background: #ff5c9f;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background: #ff3d88;
+}
+
+
+/* Overlay */
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    animation: fadeOverlay 0.5s ease;
+}
+
+@keyframes fadeOverlay {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* Popup Container */
+
+.popup-envelope-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+
+/* Envelope */
+
+.envelope {
+    position: relative;
+    width: 340px;
+    height: 240px;
+    background: #ff8fb1;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+
+/* Envelope Flap */
+
+.envelope::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ff6f9f;
+    clip-path: polygon(0 0, 50% 55%, 100% 0);
+    transform-origin: top;
+    transition: 1s;
+    z-index: 3;
+}
+
+
+/* Open Envelope */
+
+.envelope.open::before {
+    transform: rotateX(180deg);
+}
+
+
+/* Letter */
+
+.letter {
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(8px);
+    left: 5%;
+    bottom: -100%;
+    border-radius: 12px;
+    padding: 20px;
+    transition: 1s;
+    overflow: auto;
+    z-index: 2;
+    text-align: left;
+}
+
+
+/* Letter Shows */
+
+.envelope.open .letter {
+    bottom: 5%;
+}
+
+
+/* Letter Text */
+
+.letter h2 {
+    text-align: center;
+    color: #ff4f93;
+    margin-bottom: 15px;
+}
+
+.letter p {
+    line-height: 1.7;
+    color: #5a2d3b;
+    font-size: 0.95rem;
+}
+
+
+/* Close Button */
+
+.close-btn {
+    background: #ff4f93;
+}
+
+.close-btn:hover {
+    background: #ff2f7d;
+}
+
+
+/* Mobile */
+
+@media(max-width:768px) {
+    .title {
+        font-size: 3rem;
+    }
+    .card {
+        padding: 25px;
+    }
+    .photo-frame {
+        width: 170px;
+        height: 170px;
+    }
+    .envelope {
+        width: 280px;
+        height: 210px;
+    }
+}
